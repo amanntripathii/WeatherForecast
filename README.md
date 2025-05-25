@@ -43,7 +43,7 @@ Set-ExecutionPolicy RemoteSigned -Scope Process
 ### 2. 🐍 Activate the Virtual Environment
 
 ```powershell
-.\myenv\Scriptsctivate
+.\myenv\Scripts\activate
 ```
 
 - This activates the Python virtual environment named `myenv`.
