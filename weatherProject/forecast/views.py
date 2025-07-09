@@ -12,6 +12,7 @@ from datetime import datetime , timedelta
 import pytz
 import numpy as np
 import os
+from django.conf import settings
 
 API_KEY = 'cd49f29c94984fa659c8abc370df3c44'
 BASE_URL = 'https://api.openweathermap.org/data/2.5/'
@@ -107,7 +108,7 @@ def weather_view(request):
         city = request.POST.get('city')
         current_weather = get_current_weather(city)
 
-        csv_path = os.path.join('C:\\Users\\AMAN TRIPATHI\\Desktop\\MLproj\\weather.csv')
+        csv_path = os.path.join(os.path.dirname(__file__), 'weather.csv')
         historical_data = read_historical_data(csv_path)
 
         X,y,le = prepare_data(historical_data)
